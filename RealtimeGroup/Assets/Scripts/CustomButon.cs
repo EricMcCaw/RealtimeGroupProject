@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CustomButon : MonoBehaviour
 {
+    public GameObject nameInput;
     private bool hover = false;
 
     private float oScaleX, oScaleY;
@@ -21,7 +22,6 @@ public class CustomButon : MonoBehaviour
     {
         if (hover)
         {
-            print("hi");
             if (transform.localScale.x <= oScaleX * 1.5)
             {
                 double x = transform.localScale.x + transform.localScale.x * Time.deltaTime * 2;
@@ -46,6 +46,11 @@ public class CustomButon : MonoBehaviour
         hover = b;
     }
 
+    public void OpenNameInput()
+    {
+        nameInput.SetActive(true);
+    }
+
     public void Play()
     {
         SceneManager.LoadScene(1);
@@ -54,5 +59,15 @@ public class CustomButon : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void SetPlayerOneName(string s)
+    {
+        StaticClass.SetPlayerOneName(s);
+    }
+
+    public void SetPlayerTwoName(string s)
+    {
+        StaticClass.SetPlayerTwoName(s);
     }
 }
