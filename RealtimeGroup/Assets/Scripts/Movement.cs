@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
 {
     public float movementSp;
     protected Rigidbody Rb;
-    bool CanJump;
+    public bool CanJump;
     Vector3 start;
     public int Playernum;
     // Start is called before the first frame update

@@ -61,6 +61,11 @@ public class CustomButon : MonoBehaviour
         Application.Quit();
     }
 
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void SetPlayerOneName(string s)
     {
         StaticClass.SetPlayerOneName(s);
