@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     {
         CanJump = true;
         Rb = transform.GetComponent<Rigidbody>();
-        Playernum = 3;
+        Playernum = 1;
     }
 
     // Update is called once per frame
