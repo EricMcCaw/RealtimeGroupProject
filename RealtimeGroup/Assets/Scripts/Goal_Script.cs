@@ -20,7 +20,8 @@ public class Goal_Script : MonoBehaviour
     {
         if(collision.transform.tag == "Player")
         {
-            SceneManager.LoadScene("Level2");
+            print("Goal!");
+            //SceneManager.LoadScene("Level2");
         }
     }
 }
