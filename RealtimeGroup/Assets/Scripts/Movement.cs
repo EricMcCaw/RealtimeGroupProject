@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour
         //moving using rb still checks collisions without feeling like a slip n slide 
         if (!CanJump)
         {
-            Vector3 movement = inputs.normalized * movementSp / 4 * Time.deltaTime;
+            Vector3 movement = inputs.normalized * movementSp / 2 * Time.deltaTime;
             Rb.AddForce(movement);
         }
         else
@@ -63,7 +63,7 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Platform")
+        if(collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player")
         {
             CanJump = true;
         }
