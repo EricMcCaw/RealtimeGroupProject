@@ -7,14 +7,14 @@ public class Movement : MonoBehaviour
     public float movementSp;
     protected Rigidbody Rb;
     bool CanJump;
-
+    Vector3 start;
     public int Playernum;
     // Start is called before the first frame update
     void Start()
     {
         CanJump = true;
         Rb = transform.GetComponent<Rigidbody>();
-  
+        start = transform.position;
     }
 
     // Update is called once per frame
@@ -66,6 +66,10 @@ public class Movement : MonoBehaviour
         if(collision.gameObject.tag == "Platform")
         {
             CanJump = true;
+        }
+        if(collision.gameObject.tag == "Death_Wall")
+        {
+            transform.position = start;
         }
     }
 
