@@ -7,13 +7,14 @@ public class Movement : MonoBehaviour
     public float movementSp;
     protected Rigidbody Rb;
     bool CanJump;
-    int Playernum;
+
+    public int Playernum;
     // Start is called before the first frame update
     void Start()
     {
         CanJump = true;
         Rb = transform.GetComponent<Rigidbody>();
-        Playernum = 1;
+  
     }
 
     // Update is called once per frame
@@ -37,7 +38,7 @@ public class Movement : MonoBehaviour
 
         if (x == 0 && z == 0)
         {
-            dz = Input.GetAxis("Horizontal") * transform.forward;
+            dz = Input.GetAxis("Horizontal" + Playernum) * transform.forward;
         }
         else
         {
