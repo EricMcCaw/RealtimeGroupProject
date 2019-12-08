@@ -21,7 +21,7 @@ public class Goal_Script : MonoBehaviour
     {
         if(collision.transform.tag == "Player")
         {
-            print("Goal!");
+            collision.transform.position = collision.transform.GetComponent<Movement>().start;
             //SceneManager.LoadScene("Level2");
         }
     }
