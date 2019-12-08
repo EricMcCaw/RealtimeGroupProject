@@ -68,11 +68,25 @@ public class CustomButon : MonoBehaviour
 
     public void SetPlayerOneName(string s)
     {
-        StaticClass.SetPlayerOneName(s);
+        if (s == "")
+        {
+            StaticClass.SetPlayerOneName("Player 1");
+        }
+        else
+        {
+            StaticClass.SetPlayerOneName(s);
+        }
     }
 
     public void SetPlayerTwoName(string s)
     {
-        StaticClass.SetPlayerTwoName(s);
+        if (s == "")
+        {
+            StaticClass.SetPlayerTwoName("Player 2");
+        }
+        else
+        {
+            StaticClass.SetPlayerTwoName(s);
+        }
     }
 }

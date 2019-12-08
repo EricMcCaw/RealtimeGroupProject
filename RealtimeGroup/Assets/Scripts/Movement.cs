@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Movement : MonoBehaviour
     public bool CanJump;
     Vector3 start;
     public int Playernum;
+    public string playername;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,5 +75,9 @@ public class Movement : MonoBehaviour
         }
     }
 
-
+    public void updateName()
+    {
+        Canvas Can = transform.GetChild(3).GetComponent<Canvas>();
+        Can.transform.GetChild(0).GetComponent<Text>().text = name;
+    }
 }

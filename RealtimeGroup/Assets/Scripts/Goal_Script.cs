@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Goal_Script : MonoBehaviour
 {
+    public float Timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +24,14 @@ public class Goal_Script : MonoBehaviour
             print("Goal!");
             //SceneManager.LoadScene("Level2");
         }
+    }
+    public void setLevelTimer()
+    {
+        Timer = 500;
+    }
+    public void decreaseTimer(float deltaTime)
+    {
+        Timer -= deltaTime;
+       
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public static class StaticClass
 {
     public static string playerOneName, playerTwoName;
-
     public static void SetPlayerOneName(string s)
     {
         playerOneName = s;
@@ -15,4 +14,9 @@ public static class StaticClass
     {
         playerTwoName = s;
     }
+
+    
+
+
+
 }
