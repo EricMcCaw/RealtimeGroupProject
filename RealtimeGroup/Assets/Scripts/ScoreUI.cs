@@ -11,8 +11,7 @@ public class ScoreUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player1Name = StaticClass.playerOneName + " : ";
-        player2Name = StaticClass.playerTwoName + " : ";
+
 
         timerText.text = "00:00";
     }
@@ -20,6 +19,9 @@ public class ScoreUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player1Name = StaticClass.playerOneName + " : ";
+        player2Name = StaticClass.playerTwoName + " : ";
+
         GameObject holder = GameObject.FindGameObjectWithTag("Holder");
         timer = holder.GetComponent<Level1Script>().Timer;
 

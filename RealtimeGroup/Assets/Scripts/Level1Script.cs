@@ -18,14 +18,18 @@ public class Level1Script : MonoBehaviour
     {
         if (Timer <= 0)
         {
-            SceneManager.LoadScene("TestLevel2");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            setLevelTimer();
         }
-        decreaseTimer(Time.deltaTime);
+        else
+        {
+            decreaseTimer(Time.deltaTime);
+        }
     }
 
     public void setLevelTimer()
     {
-        Timer = 180;
+        Timer = 10;
     }
     public void decreaseTimer(float deltaTime)
     {

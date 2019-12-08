@@ -7,6 +7,7 @@ TagManager:
   - Platform
   - Goal
   - Death_Wall
+  - Holder
   layers:
   - Default
   - TransparentFX
