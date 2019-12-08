@@ -73,6 +73,20 @@ public class Movement : MonoBehaviour
         {
             transform.position = start;
         }
+        if(collision.gameObject.tag == "Goal")
+        {
+            if(Playernum == 1)
+            {
+                StaticClass.playerOneScore += 1;
+                print("Goallll 1 " + StaticClass.playerOneScore);
+            }
+            else
+            {
+                StaticClass.playerTwoScore += 1;
+                print("SCOORRReE 2 " + StaticClass.playerTwoScore);
+            }
+
+        }
     }
 
     public void updateName()

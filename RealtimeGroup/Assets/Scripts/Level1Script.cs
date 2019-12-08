@@ -21,12 +21,12 @@ public class Level1Script : MonoBehaviour
             SceneManager.LoadScene("TestLevel2");
         }
         decreaseTimer(Time.deltaTime);
-        print(Timer);
+        //print(Timer);
     }
 
     public void setLevelTimer()
     {
-        Timer = 20;
+        Timer = 200;
     }
     public void decreaseTimer(float deltaTime)
     {
