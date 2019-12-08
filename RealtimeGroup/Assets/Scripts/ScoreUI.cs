@@ -20,7 +20,9 @@ public class ScoreUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        GameObject holder = GameObject.FindGameObjectWithTag("Holder");
+        timer = holder.GetComponent<Level1Script>().Timer;
+
         int min = Mathf.FloorToInt(timer / 60);
         int sec = Mathf.FloorToInt(timer % 60);
         timerText.text = min.ToString("00") + ":" + sec.ToString("00");
@@ -28,4 +30,5 @@ public class ScoreUI : MonoBehaviour
         player1NameText.text = player1Name + StaticClass.playerOneScore.ToString();
         player2NameText.text = player2Name + StaticClass.playerTwoScore.ToString();
     }
+
 }

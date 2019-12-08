@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Goal_Script : MonoBehaviour
 {
-    public float Timer;
+    
     // Start is called before the first frame update
     void Start()
     {
-        setLevelTimer();
+       
     }
 
     // Update is called once per frame
@@ -19,23 +19,12 @@ public class Goal_Script : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if( Timer <= 0)
-        {
-            SceneManager.LoadScene("Level2");
-        }
+        
         if (collision.transform.tag == "Player")
         {
             collision.transform.position = collision.transform.GetComponent<Movement>().start;
             //SceneManager.LoadScene("Level2");
         }
     }
-    public void setLevelTimer()
-    {
-        Timer = 500;
-    }
-    public void decreaseTimer(float deltaTime)
-    {
-        Timer -= deltaTime;
-       
-    }
+    
 }
