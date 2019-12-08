@@ -68,7 +68,7 @@ public class CustomButon : MonoBehaviour
 
     public void SetPlayerOneName(string s)
     {
-        if (s == "")
+        if (s == string.Empty)
         {
             StaticClass.SetPlayerOneName("Player 1");
         }
@@ -80,7 +80,7 @@ public class CustomButon : MonoBehaviour
 
     public void SetPlayerTwoName(string s)
     {
-        if (s == "")
+        if (s == string.Empty)
         {
             StaticClass.SetPlayerTwoName("Player 2");
         }

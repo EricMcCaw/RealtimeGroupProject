@@ -15,16 +15,36 @@ public class PlayerHandler : MonoBehaviour
 
         Player2.GetComponent<Movement>().Playernum = 2;
         Player1.GetComponent<Movement>().Playernum = 1;
-        Player1.GetComponent<Movement>().name = StaticClass.playerOneName;
-        Player2.GetComponent<Movement>().name = StaticClass.playerTwoName;
 
-        Player2.GetComponent<Movement>().updateName();
-        Player1.GetComponent<Movement>().updateName();
+        SetPlayerNames();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void SetPlayerNames()
+    {
+        if (StaticClass.playerOneName == string.Empty)
+        {
+            StaticClass.SetPlayerOneName("Player 1");
+        }
+
+
+        if (StaticClass.playerTwoName == string.Empty)
+        {
+            StaticClass.SetPlayerTwoName("Player 2");
+        }
+
+        Player2.GetComponent<Movement>().name = StaticClass.playerTwoName;
+        Player1.GetComponent<Movement>().name = StaticClass.playerOneName;
+
+
+        Player2.GetComponent<Movement>().updateName();
+        Player1.GetComponent<Movement>().updateName();
+
     }
 }
