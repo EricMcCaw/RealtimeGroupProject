@@ -29,7 +29,7 @@ public class Level1Script : MonoBehaviour
 
     public void setLevelTimer()
     {
-        Timer = 10;
+        Timer = 118;
     }
     public void decreaseTimer(float deltaTime)
     {
