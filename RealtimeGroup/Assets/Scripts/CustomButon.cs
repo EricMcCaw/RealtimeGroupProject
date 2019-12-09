@@ -63,6 +63,8 @@ public class CustomButon : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        StaticClass.SetPlayerOneScore();
+        StaticClass.SetPlayerTwoScore();
         SceneManager.LoadScene(0);
     }
 

@@ -16,7 +16,17 @@ public static class StaticClass
         playerTwoName = s;
     }
 
-    
+    public static void SetPlayerOneScore()
+    {
+        playerOneScore = 0;
+    }
+
+    public static void SetPlayerTwoScore()
+    {
+        playerTwoScore = 0;
+    }
+
+
 
 
 
