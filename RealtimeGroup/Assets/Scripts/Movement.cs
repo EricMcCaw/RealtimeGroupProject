@@ -11,6 +11,11 @@ public class Movement : MonoBehaviour
     public Vector3 start;
     public int Playernum;
     public string playername;
+    public AudioClip Land;
+    public AudioClip jump;
+    public AudioClip Death;
+    public AudioClip Score1;
+    public AudioClip Score2;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +37,10 @@ public class Movement : MonoBehaviour
         {
             Rb.AddForce(new Vector3(0,800,0));
             CanJump = false;
+            AudioSource source = GetComponent<AudioSource>();
+            source.clip = jump;
+            source.Play();
+
         }
     }
     public void GetInputs(float x = 0, float z = 0)
@@ -68,20 +77,32 @@ public class Movement : MonoBehaviour
         if(collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player")
         {
             CanJump = true;
+            AudioSource source = GetComponent<AudioSource>();
+            source.clip = Land;
+            source.Play();
         }
         if(collision.gameObject.tag == "Death_Wall")
         {
+            AudioSource source = GetComponent<AudioSource>();
+            source.clip = Death;
+            source.Play();
             transform.position = start;
         }
         if(collision.gameObject.tag == "Goal")
         {
             if(Playernum == 1)
             {
+                AudioSource source = GetComponent<AudioSource>();
+                source.clip = Score1;
+                source.Play();
                 StaticClass.playerOneScore += 1;
                 print("Goallll 1 " + StaticClass.playerOneScore);
             }
             else
             {
+                AudioSource source = GetComponent<AudioSource>();
+                source.clip = Score2;
+                source.Play();
                 StaticClass.playerTwoScore += 1;
                 print("SCOORRReE 2 " + StaticClass.playerTwoScore);
             }
